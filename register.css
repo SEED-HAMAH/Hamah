@@ -1,0 +1,129 @@
+/* Color variables from the main webpage */
+  :root {
+    --primary-color: #555c8b;
+    --secondary-color: #ff6f4c;
+    --dark-color: #2c2c2c;
+    --light-bg-color: #f7f9fa;
+    --success-color: #108a00; /* This was the existing green color */
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, var(--light-bg-color) 0%, #c3cfe2 100%);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-success {
+  background-color: var(--secondary-color);
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: var(--primary-color);
+}
+
+.login {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--text-muted-color);
+}
+
+.container-box {
+  max-width: 1100px;
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.15);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.left-panel {
+  flex: 1;
+  background: url('./assets/images/market scene.png') no-repeat center center;
+  color: #fff;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.right-panel {
+  flex: 1;
+  padding: 40px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .left-panel { display: none; }
+  .right-panel { padding: 30px; max-height: none; }
+}
+
+.form-control, .form-select {
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 1rem;
+}
+
+.input-group-text {
+  background-color: #fff;
+  border-left: none;
+  cursor: pointer;
+}
+
+.radio-group {
+  display: flex;
+  gap: 20px;
+}
+.radio-card {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 20px;
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+.radio-card input[type="radio"]:checked + label {
+  border-color: var(--primary-color);
+  font-weight: bold;
+}
+.radio-card input[type="radio"] {
+  display: none;
+}
+.radio-card label {
+  width: 100%;
+  margin: 0;
+  cursor: pointer;
+  display: block;
+}
+
+.skill-tags {
+  margin-top: 5px;
+}
+.skill-tag {
+  display: inline-block;
+  background: var(--secondary-color);
+  color: #fff;
+  border-radius: 20px;
+  padding: 5px 12px;
+  margin: 3px;
+  font-size: 0.9rem;
+}
+.skill-tag .remove-skill {
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+/* Error Feedback */
+.error-text {
+  color: var(--secondary-color);
+  font-size: 0.875em;
+  margin-top: 2px;
+}

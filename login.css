@@ -1,0 +1,237 @@
+:root {
+    --primary-color: #555c8b;
+    --secondary-color: #ff6f4c;
+    --dark-color: #2c2c2c;
+    --light-bg-color: #f7f9fa;
+    --success-color: #108a00;
+    --text-color: #34495e;
+    --text-muted-color: #7f8c8d;
+    --heading-color: #2c3e50;
+    --border-color: #ddd;
+    --shadow-color: rgba(52, 152, 219, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, var(--light-bg-color) 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    max-width: 1000px;
+    width: 100%;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.left-panel {
+    flex: 1;
+    background: url('./assets/images/market scene.png') no-repeat center center;
+    color: white;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.left-panel h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.left-panel p {
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.features {
+    list-style: none;
+}
+
+.features li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.features i {
+    margin-right: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-panel {
+    flex: 1;
+    padding: 50px;
+}
+
+.logo {
+    color: var(--heading-color);
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    color: var(--success-color);
+    margin-right: 10px;
+    font-size: 32px;
+}
+
+.tagline {
+    color: var(--text-muted-color);
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+h1 {
+    color: var(--heading-color);
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+input:focus {
+    border-color: var(--success-color);
+    outline: none;
+    box-shadow: 0 0 0 2px var(--shadow-color);
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+}
+
+.remember input {
+    width: auto;
+    margin-right: 8px;
+}
+
+.forgot {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.forgot:hover {
+    text-decoration: underline;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: var(--secondary-color);
+}
+
+.separator {
+    text-align: center;
+    margin: 30px 0;
+    position: relative;
+    color: #95a5a6;
+}
+
+.separator::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 42%;
+    height: 1px;
+    background: var(--border-color);
+}
+
+.separator::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 42%;
+    height: 1px;
+    background: var(--border-color);
+}
+
+.signup {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--text-muted-color);
+}
+
+.signup a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.signup a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-panel {
+        display: none;
+    }
+
+    .right-panel {
+        padding: 30px;
+    }
+}
