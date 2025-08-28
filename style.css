@@ -253,6 +253,78 @@ h6 {
   object-fit: cover;
 }
 
+/* Basic styling for the section, you can add more as needed */
+.testimonials-section {
+    padding: 50px 0;
+    background-color: #f8f9fa; /* Or any background color you prefer */
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Carousel specific CSS */
+.carousel-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.testimonial-carousel-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.testimonial-card-wrapper {
+    flex: 0 0 33.3333%; /* Show 3 cards at a time on desktop */
+    padding: 0 10px; /* Space between cards */
+    transition: transform 0.5s ease;
+}
+
+/* Base card styling, non-active */
+.testimonial-card-wrapper .card {
+    transition: transform 0.5s ease, background-color 0.5s ease;
+    transform: scale(0.9); /* Initially smaller */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Active card styles for the one in the center */
+.testimonial-card-wrapper.active .card {
+    background-color: var(--secondary-color);
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-card-wrapper.active .card p,
+.testimonial-card-wrapper.active .card h5,
+.testimonial-card-wrapper.active .card .small {
+    color: #fff !important;
+}
+
+/* Hide cards not in view */
+.testimonial-card-wrapper:not(.visible) {
+    display: none;
+}
+
+/* Mobile responsiveness: show only one card at a time */
+@media (max-width: 767px) {
+    .testimonial-card-wrapper {
+        flex: 0 0 100%;
+    }
+    .testimonial-carousel-container {
+        justify-content: center;
+    }
+    .testimonial-card-wrapper .card {
+        transform: scale(1); /* No scaling on mobile */
+    }
+    .testimonial-card-wrapper.active .card {
+        transform: scale(1);
+    }
+}
+
 /* Footer */
 footer {
   background-color: var(--dark-color);
@@ -273,6 +345,11 @@ footer a {
 
 footer a:hover {
   color: #fff;
+}
+
+.footer-description{
+  color: #a0a0a0;
+  font-size: 0.7rem;
 }
 
 .social-icons a {
