@@ -1,38 +1,61 @@
-/* Testimonials Section */
-.testimonials-section {
-  padding: 80px 0;
-  background-color: #fff;
-}
+document.addEventListener('DOMContentLoaded', function() {
+    const carouselContainer = document.querySelector('.testimonial-carousel-container');
+    const cards = document.querySelectorAll('.testimonial-card-wrapper');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    let currentIndex = 0;
 
-.testimonials-section .card {
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  padding: 30px;
-}
+    function updateCarousel() {
+        const totalCards = cards.length;
+        const visibleCards = window.innerWidth >= 768 ? 3 : 1;
 
-.testimonials-section .card-orange {
-  background-color: var(--secondary-color) !important;
-  color: #fff;
-}
+        // Ensure the container is positioned correctly
+        const offset = -currentIndex * (cards[0].offsetWidth + 20); // 20px for g-4 gap
+        carouselContainer.style.transform = `translateX(${offset}px)`;
 
-.testimonials-section .card-orange .text-muted {
-  color: #fff !important;
-}
+        // Update active, visible, and center cards
+        cards.forEach((card, index) => {
+            // Determine visibility
+            const isVisible = (index >= currentIndex && index < currentIndex + visibleCards);
+            card.style.display = isVisible ? 'block' : 'none';
 
-.testimonials-section .card-body p {
-  font-style: italic;
-}
+            // Reset classes
+            card.classList.remove('active', 'center-card');
+        });
 
-.testimonials-section .avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
-}
+        // Set the center card for desktop view
+        if (visibleCards > 1) {
+            const centerCardIndex = currentIndex + 1;
+            if (cards[centerCardIndex]) {
+                cards[centerCardIndex].classList.add('active', 'center-card');
+            }
+        } else {
+            // For mobile, the single visible card is the active one
+            if (cards[currentIndex]) {
+                cards[currentIndex].classList.add('active');
+            }
+        }
+    }
 
-/* Basic styling for the section, you can add more as needed */
-.testimonials-section {
-    padding: 50px 0;
-    background-color: #f8f9fa; /* Or any background color you prefer */
-}
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = cards.length - 1; // Loop back to the end
+        }
+        updateCarousel();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        const visibleCards = window.innerWidth >= 768 ? 3 : 1;
+        if (currentIndex < cards.length - visibleCards) {
+            currentIndex++;
+        } else {
+            currentIndex = 0; // Loop back to the beginning
+        }
+        updateCarousel();
+    });
+
+    window.addEventListener('resize', updateCarousel);
+    updateCarousel();
+});
