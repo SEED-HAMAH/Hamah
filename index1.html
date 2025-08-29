@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Finder Landing Page</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts - Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="./style1.css">
+</head>
+<body>
+
+    <!-- Main Navigation Bar -->
+    <!-- The sticky-top class from Bootstrap makes the navbar stick to the top on scroll -->
+    <nav class="navbar navbar-expand-lg py-3 sticky-top">
+        <div class="container">
+            <a class="navbar-brand me-auto me-lg-0" href="#">
+                <img src="./assets/images/hamah black logo v2@4x.png" alt="Hamah logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item me-3">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="#job-status">Jobs</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a href="./index.html" class="btn btn-outline-primary me-3 rounded-pill reg-btn">Logout</a>
+                    <a href="./profile.html" class="btn btn-custom-primary rounded-pill reg-btn">Profile</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center text-md-start">
+        <div class="shape-circle shape-circle-lg"></div>
+        <div class="shape-circle shape-circle-sm"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Left Content -->
+                <div class="col-12 col-md-6 mb-5 mb-md-0">
+                    <h1>Hello user!! let's check out which bolo is in the area!!</h1>
+                    <p class="my-4 text-muted">As a unified body with commited and hard working team members, you can search for what suits you around the area from the comfort of your home. don't tress.....cuz we dey for you!! ^-^</p>
+                    <div class="d-flex align-items-center mb-5">
+                        <a href="#categories" class="btn btn-custom-primary me-3"> categories</a>
+                        <div class="play-button-container">
+                            <a href="https://youtube.com" target="_blank" class="play-button"><i class="fas fa-play"></i></a>
+                            <span>View Demo Video</span>
+                        </div>
+                    </div>
+                    <!-- Stats -->
+                    <div class="row g-4 text-center">
+                        <div class="col-4">
+                            <div class="stats-card">
+                                <h4>300k+</h4>
+                                <p>Jobs Available</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="stats-card">
+                                <h4>5.8k+</h4>
+                                <p>Companies</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="stats-card">
+                                <h4>1.2M+</h4>
+                                <p>Candidates</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Image -->
+                <div class="col-12 col-md-6 text-center">
+                    <img src="./assets/images/kristin-wilson-MAy3I838uNg-unsplash.jpg" class="img-fluid" alt="Woman selling on roadside" onerror="this.src='https://placehold.co/600x600/f7f9fa/f7f9fa?text=Image+of+Woman'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- job management section -->
+     <section class="job-status-section" id="job-status">
+    <div class="container">
+        <h2 class="text-center mb-5">Your Job Status & Available Opportunities</h2>
+        
+        <ul class="nav nav-tabs justify-content-center" id="jobStatusTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pending-tab" data-bs-toggle="tab" data-bs-target="#pending" type="button" role="tab" aria-controls="pending" aria-selected="true">Pending</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="completed-tab" data-bs-toggle="tab" data-bs-target="#completed" type="button" role="tab" aria-controls="completed" aria-selected="false">Completed</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="todo-tab" data-bs-toggle="tab" data-bs-target="#todo" type="button" role="tab" aria-controls="todo" aria-selected="false">To Do</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="available-tab" data-bs-toggle="tab" data-bs-target="#available" type="button" role="tab" aria-controls="available" aria-selected="false">Available Jobs</button>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="jobStatusTabsContent">
+            
+            <div class="tab-pane fade show active" id="pending" role="tabpanel" aria-labelledby="pending-tab">
+                <div class="row g-4 mt-4">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card job-card h-100 pending-job">
+                            <div class="card-body">
+                                <h5 class="card-title">Pending Job - Home Cleaning</h5>
+                                <p class="card-text text-muted">Awaiting confirmation from client</p>
+                                <hr>
+                                <div class="job-details">
+                                    <p><i class="fas fa-map-marker-alt"></i> Bamenda</p>
+                                    <p><i class="fas fa-dollar-sign"></i> 50,000 XAF</p>
+                                    <p><i class="fas fa-clock"></i> Posted 2 days ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card job-card h-100 pending-job">
+                            <div class="card-body">
+                                <h5 class="card-title">Pending Job - Graphic Design</h5>
+                                <p class="card-text text-muted">Awaiting confirmation from client</p>
+                                <hr>
+                                <div class="job-details">
+                                    <p><i class="fas fa-map-marker-alt"></i> Online</p>
+                                    <p><i class="fas fa-dollar-sign"></i> 75,000 XAF</p>
+                                    <p><i class="fas fa-clock"></i> Posted 1 day ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="completed" role="tabpanel" aria-labelledby="completed-tab">
+                <div class="row g-4 mt-4">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card job-card h-100 completed-job">
+                            <div class="card-body">
+                                <h5 class="card-title">Completed Job - Plumbing Fix</h5>
+                                <p class="card-text text-success">Paid and reviewed</p>
+                                <hr>
+                                <div class="job-details">
+                                    <p><i class="fas fa-map-marker-alt"></i> Bamenda</p>
+                                    <p><i class="fas fa-dollar-sign"></i> 25,000 XAF</p>
+                                    <p><i class="fas fa-check-circle"></i> Completed on 23/08/2025</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="todo" role="tabpanel" aria-labelledby="todo-tab">
+                <div class="row g-4 mt-4">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card job-card h-100 todo-job">
+                            <div class="card-body">
+                                <h5 class="card-title">To Do Job - Catering Service</h5>
+                                <p class="card-text text-info">Confirmed. Deadline: 31/08/2025</p>
+                                <hr>
+                                <div class="job-details">
+                                    <p><i class="fas fa-map-marker-alt"></i> Buea</p>
+                                    <p><i class="fas fa-dollar-sign"></i> 150,000 XAF</p>
+                                    <p><i class="fas fa-calendar-alt"></i> Start date: 30/08/2025</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="available" role="tabpanel" aria-labelledby="available-tab">
+                <div class="row g-4 mt-4">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card job-card h-100 available-job">
+                            <div class="card-body">
+                                <h5 class="card-title">Available - Freelance Content Writer</h5>
+                                <p class="card-text text-primary">New opportunity. Apply now!</p>
+                                <hr>
+                                <div class="job-details">
+                                    <p><i class="fas fa-map-marker-alt"></i> Online</p>
+                                    <p><i class="fas fa-dollar-sign"></i> Negotiable</p>
+                                    <p><i class="fas fa-check"></i> 10 applications</p>
+                                </div>
+                                <a href="./form.html" class="btn btn-primary mt-3">Apply</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+   
+
+    
+    <!-- Categories Section -->
+       <section class="categories-section" id="categories">
+        <div class="container">
+            <h2 class="text-center">Let's help you choose the category you want</h2>
+            <div id="carouselExampleControls" class="carousel slide instagram-story-carousel" data-bs-ride="carousel" data-bs-interval="30000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row g-4 mt-5 justify-content-center"> 
+                            <!-- Data attributes added for modal content -->
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-title="Agriculture" data-text="A rewarding field focused on the cultivation of land and the raising of animals. Explore jobs in farming, agronomy, food science, and sustainable agriculture."> 
+                                <div class="card p-3 h-100 card-circle instagram-story-card">
+                                    <div class="card-body">
+                                        <div class="card-icon"><i class="fas fa-leaf"></i></div>
+                                        <div class="card-text-overlay">
+                                            <h5 class="card-title mt-3">Agriculture</h5>
+                                            <p class="card-text small text-muted">2.1k Jobs Available</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-title="Home Services" data-text="Find opportunities in a variety of home-related fields, from plumbing and electrical work to landscaping and cleaning services. Help others maintain their homes.">
+                                <div class="card p-3 h-100 card-circle instagram-story-card">
+                                    <div class="card-body">
+                                        <div class="card-icon"><i class="fas fa-home"></i></div>
+                                        <div class="card-text-overlay">
+                                            <h5 class="card-title mt-3">Home Services</h5>
+                                            <p class="card-text small text-muted">1.5k Jobs Available</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-title="Health and Wellness" data-text="Make a difference in people's lives with a career in healthcare. Explore jobs in nursing, therapy, nutrition, fitness, and medical administration.">
+                                <div class="card p-3 h-100 card-circle instagram-story-card">
+                                    <div class="card-body">
+                                        <div class="card-icon"><i class="fas fa-heartbeat"></i></div>
+                                        <div class="card-text-overlay">
+                                            <h5 class="card-title mt-3">Health and Wellness</h5>
+                                            <p class="card-text small text-muted">1.8k Jobs Available</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-title="Retail and Sales" data-text="Join the dynamic world of retail. Opportunities are available in sales, customer service, store management, and marketing for various products and services.">
+                                <div class="card p-3 h-100 card-circle instagram-story-card">
+                                    <div class="card-body">
+                                        <div class="card-icon"><i class="fas fa-store-alt"></i></div>
+                                        <div class="card-text-overlay">
+                                            <h5 class="card-title mt-3">Retail and Sales</h5>
+                                            <p class="card-text small text-muted">2.5k Jobs Available</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-title="Freelance" data-text="Take control of your career with flexible freelance work. This category includes a wide range of short-term and contract jobs in fields like writing, design, and consulting.">
+                                <div class="card p-3 h-100 card-circle instagram-story-card">
+                                    <div class="card-body">
+                                        <div class="card-icon"><i class="fas fa-user-tie"></i></div>
+                                        <div class="card-text-overlay">
+                                            <h5 class="card-title mt-3">Freelance</h5>
+                                            <p class="card-text small text-muted">3.2k Jobs Available</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row g-4 mt-5 justify-content-center"> 
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-title="Building and Construction" data-text="Help build the future with a career in construction. Roles include site management, skilled trades like carpentry and masonry, and architecture.">
+                                <div class="card p-3 h-100 card-circle instagram-story-card">
+                                    <div class="card-body">
+                                        <div class="card-icon"><i class="fas fa-hard-hat"></i></div>
+                                        <div class="card-text-overlay">
+                                            <h5 class="card-title mt-3">Building and Construction</h5>
+                                            <p class="card-text small text-muted">4.1k Jobs Available</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-title="Education and Training" data-text="Inspire the next generation. This category offers jobs in teaching, corporate training, educational administration, and academic support roles.">
+                                <div class="card p-3 h-100 card-circle instagram-story-card">
+                                    <div class="card-body">
+                                        <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+                                        <div class="card-text-overlay">
+                                            <h5 class="card-title mt-3">Education and Training</h5>
+                                            <p class="card-text small text-muted">1.9k Jobs Available</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-title="Logistics and Miscellaneous" data-text="Keep the world moving. Find jobs in supply chain management, warehousing, transportation, and other essential support roles that are vital to businesses.">
+                                <div class="card p-3 h-100 card-circle instagram-story-card">
+                                    <div class="card-body">
+                                        <div class="card-icon"><i class="fas fa-truck"></i></div>
+                                        <div class="card-text-overlay">
+                                            <h5 class="card-title mt-3">Logistics and Miscellaneous</h5>
+                                            <p class="card-text small text-muted">1.2k Jobs Available</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-title="Tech & IT" data-text="The fast-paced world of technology awaits. Jobs include software development, cybersecurity, IT support, network administration, and data analysis.">
+                                <div class="card p-3 h-100 card-circle instagram-story-card">
+                                    <div class="card-body">
+                                        <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
+                                        <div class="card-text-overlay">
+                                            <h5 class="card-title mt-3">Tech & IT</h5>
+                                            <p class="card-text small text-muted">3.5k Jobs Available</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="6 col-sm-4 col-md-3 col-lg-2" data-title="Hospitality" data-text="Provide exceptional service in hotels, restaurants, and tourism. This field includes roles in management, event planning, food preparation, and customer service.">
+                                <div class="card p-3 h-100 card-circle instagram-story-card">
+                                    <div class="card-body">
+                                        <div class="card-icon"><i class="fas fa-utensils"></i></div>
+                                        <div class="card-text-overlay">
+                                            <h5 class="card-title mt-3">Hospitality</h5>
+                                            <p class="card-text small text-muted">1.1k Jobs Available</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section bg-light py-5" id="testimonials">
+    <div class="container text-center">
+        <h2 class="mb-4">What Our Clients Say</h2>
+        <p class="text-muted mb-5">Hear from people who have used our platform</p>
+        <div class="d-flex flex-nowrap overflow-auto py-3 gap-4 custom-scrollbar">
+            <div class="card1 p-4 shadow-sm flex-shrink-0" style="min-width: 50px; height: 300px;">
+                <p class="quote mb-3">"This platform is a game-changer. The jobs are well-structured and easy to find. I highly recommend it to anyone looking to level up their search in looking for a job especially in Bamenda</p>
+                <div class="d-flex align-items-center justify-content-center">
+                    <img src="https://placehold.co/60x60/555c8b/ffffff?text=A1" alt="User Avatar" class="avatar rounded-circle me-3">
+                    <div>
+                        <h5 class="mb-0">Neba Johnson</h5>
+                        <small class="text-muted">Web Developer</small>
+                    </div>
+                </div>
+            </div>
+            <div class="card1 p-4 shadow-sm flex-shrink-0" style="min-width: 50px; height: 300px;">
+                <p class="quote mb-3">"I like the site and how it's easy to navigate in it. strongly recommend this. hammah you guys have a thumbs up"</p>
+                <div class="d-flex align-items-center justify-content-center">
+                    <img src="https://placehold.co/60x60/ff6f4c/ffffff?text=B2" alt="User Avatar" class="avatar rounded-circle me-3">
+                    <div>
+                        <h5 class="mb-0">Sarah Toh</h5>
+                        <small class="text-muted">Make up artist</small>
+                    </div>
+                </div>
+            </div>
+            <div class="card1 p-4 shadow-sm flex-shrink-0" style="min-width: 50px; height: 300px;">
+                <p class="quote mb-3">"I was able to switch careers in just six months, thanks to the practical, hands-on projects. The support community is also incredibly helpful."</p>
+                <div class="d-flex align-items-center justify-content-center">
+                    <img src="https://placehold.co/60x60/555c8b/ffffff?text=C3" alt="User Avatar" class="avatar rounded-circle me-3">
+                    <div>
+                        <h5 class="mb-0">Michael Brown</h5>
+                        <small class="text-muted">Digital Marketer</small>
+                    </div>
+                </div>
+            </div>
+            <div class="card1 p-4 shadow-sm flex-shrink-0" style="min-width: 50px; height: 300px;">
+                <p class="quote mb-3">"The platform's user interface is so intuitive and easy to navigate. Finding the right jobs for me and getting started was a breeze."</p>
+                <div class="d-flex align-items-center justify-content-center">
+                    <img src="https://placehold.co/60x60/ff6f4c/ffffff?text=D4" alt="User Avatar" class="avatar rounded-circle me-3">
+                    <div>
+                        <h5 class="mb-0">Jessica Lee</h5>
+                        <small class="text-muted">UI/UX Designer</small>
+                    </div>
+                </div>
+            </div>
+            <div class="card1 p-4 shadow-sm flex-shrink-0" style="min-width: 50px; height: 300px;">
+                <p class="quote mb-3">"I love the flexibility this service offers. through this platform i got my first job It's truly life-changing."</p>
+                <div class="d-flex align-items-center justify-content-center">
+                    <img src="https://placehold.co/60x60/555c8b/ffffff?text=E5" alt="User Avatar" class="avatar rounded-circle me-3">
+                    <div>
+                        <h5 class="mb-0">David Wilson</h5>
+                        <small class="text-muted">Product Manager</small>
+                    </div>
+                </div>
+            </div>
+            <div class="card1 p-4 shadow-sm flex-shrink-0" style="min-width: 50px; height: 300px;">
+                <p class="quote mb-3">"The variety of Jobs is amazing. I everything I needed to find and make money is in one place."</p>
+                <div class="d-flex align-items-center justify-content-center">
+                    <img src="https://placehold.co/60x60/ff6f4c/ffffff?text=F6" alt="User Avatar" class="avatar rounded-circle me-3">
+                    <div>
+                        <h5 class="mb-0">Emily Carter</h5>
+                        <small class="text-muted">Graphic Designer</small>
+                    </div>
+                </div>
+            </div>
+            <div class="card1 p-4 shadow-sm flex-shrink-0" style="min-width: 50px; height: 300px;">
+                <p class="quote mb-3">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut maiores officiis neque minima, tempora impedit numquam itaque deleniti aliquam dolores?"</p>
+                <div class="d-flex align-items-center justify-content-center">
+                    <img src="https://placehold.co/60x60/555c8b/ffffff?text=G7" alt="User Avatar" class="avatar rounded-circle me-3">
+                    <div>
+                        <h5 class="mb-0">James Taylor</h5>
+                        <small class="text-muted">Baber</small>
+                    </div>
+                </div>
+            </div>
+            <div class="card1 p-4 shadow-sm flex-shrink-0" style="min-width: 50px; height: 300px;">
+                <p class="quote mb-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus eaque quaerat repellat! Nulla, architecto. Recusandae.</p>
+                <div class="d-flex align-items-center justify-content-center">
+                    <img src="https://placehold.co/60x60/ff6f4c/ffffff?text=H8" alt="User Avatar" class="avatar rounded-circle me-3">
+                    <div>
+                        <h5 class="mb-0">Olivia Martinez</h5>
+                        <small class="text-muted">Financial Analyst</small>
+                    </div>
+                </div>
+            </div>
+            <div class="card1 p-4 shadow-sm flex-shrink-0" style="min-width: 50px; height: 300px;">
+                <p class="quote mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit distinctio quasi delectus beatae.</p>
+                <div class="d-flex align-items-center justify-content-center">
+                    <img src="https://placehold.co/60x60/555c8b/ffffff?text=I9" alt="User Avatar" class="avatar rounded-circle me-3">
+                    <div>
+                        <h5 class="mb-0">William Clark</h5>
+                        <small class="text-muted">Civil Engineer</small>
+                    </div>
+                </div>
+            </div>
+            <div class="card1 p-4 shadow-sm flex-shrink-0" style="min-width: 50px; height: 300px;">
+                <p class="quote mb-3">"I was hesitant at first, but the free trial convinced me. "</p>
+                <div class="d-flex align-items-center justify-content-center">
+                    <img src="https://placehold.co/60x60/ff6f4c/ffffff?text=J10" alt="User Avatar" class="avatar rounded-circle me-3">
+                    <div>
+                        <h5 class="mb-0">Sophia Evans</h5>
+                        <small class="text-muted">Healthcare Administrator</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+   
+
+
+
+    <!-- Footer -->
+    <footer class="text-center text-md-start">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <a class="navbar-brand mb-3 d-block" href="#">Hamah</a>
+                    <p class="small footer-description">A platform to find your dream job that helps you grow and find a better career path. Find your dream job easily.</p>
+                </div>
+                <div class="col-6 col-md-2">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2">
+                    <h5>For Candidates</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Job Search</a></li>
+                        <li><a href="#">Job Alerts</a></li>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Resume Builder</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2">
+                    <h5>For Employers</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Post a Job</a></li>
+                        <li><a href="#">Our Solutions</a></li>
+                        <li><a href="#">Company Profile</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2">
+                    <h5>Resources</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-5">
+            <div class="d-flex justify-content-between flex-column flex-md-row text-center">
+                <p class="small mb-2 mb-md-0">Copyright HAMAH © 2025. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank" class="text-decoration-none"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com" target="_blank" class="text-decoration-none"><i class="fab fa-twitter"></i></a>
+                    <a href="https://linkedin.com" target="_blank" class="text-decoration-none"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://instagram.com" target="_blank" class="text-decoration-none"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS for carousel functionality -->
+     <script src="./script.js"></script>
+</body>
+</html>
