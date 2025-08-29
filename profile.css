@@ -1,0 +1,53 @@
+/* Custom CSS Variables and Styling */
+:root {
+  --primary-color: #555c8b;
+  --secondary-color: #ff6f4c;
+  --dark-color: #2c2c2c;
+  --light-bg-color: #f7f9fa;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.navbar-brand {
+  font-weight: 700;
+  color: var(--primary-color) !important;
+}
+
+.navbar-brand img {
+  height: 40px; /* Adjust based on your logo size */
+}
+
+.nav-link {
+  color: var(--primary-color) !important;
+  font-weight: 500;
+}
+
+/* .reg-btn {
+  height: 40px;
+
+} */
+
+/* Ensure navbar is sticky without affecting other styles */
+.navbar.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 1020; /* To make sure it stays on top of other elements */
+  background-color: #fff; /* A background color to avoid content showing through */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Optional: add a subtle shadow */
+}
+
+.bg-dark {
+  min-height: 100%;
+}
+
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;        /* Bold */
+  font-size: 48px;         /* Adjust size */
+  color: #ffffff;          /* Pure white */
+  text-transform: lowercase;
+  letter-spacing: 1px;     /* Small spacing for a clean look */
+}
